@@ -21,7 +21,7 @@ value.depth_val.5=3-bit
 value.depth_val.6=2-bit
 value.depth_val.7=1-bit
 
-screen.color_screen=Color Depth Options
+screen.color_screen=Color Options
 
 option.color_crushing=Color Crushing
 

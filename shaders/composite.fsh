@@ -1,6 +1,6 @@
 #version 120
 
-#include "shaders.settings"
+#include "settings.glsl"
 
 uniform sampler2D gcolor;
 
@@ -8,10 +8,9 @@ varying vec2 texcoord;
 uniform float viewWidth, viewHeight;
 
 #include "fragment/pixel.glsl"
-#include "fragment/colorcrush.glsl"
 #include "fragment/colorprocessing.glsl"
 
-const vec2 pixelSizes[ 7 ] = vec2[](
+const vec2 pixelSizes[7] = vec2[](
 	vec2( 2.0 ),
 	vec2( 4.0 ),
 	vec2( 8.0 ),
@@ -21,7 +20,7 @@ const vec2 pixelSizes[ 7 ] = vec2[](
 	vec2( 6.0 )
 );
 
-const float colorDepths[ 8 ] = float[](
+const float colorDepths[8] = float[](
 	8.0,
 	7.0,
 	6.0,
@@ -57,5 +56,5 @@ void main() {
 		#endif
 	#endif
 	
-	gl_FragData[ 0 ] = vec4( color, 1.0 );
+	gl_FragData[0] = vec4( color, 1.0 );
 }

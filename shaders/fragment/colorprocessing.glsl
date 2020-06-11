@@ -1,5 +1,10 @@
-#include "../shaders.settings"
+#include "../settings.glsl"
 
+/**
+ * Convert an RGB color vetor to an HSV color vector
+ * @param An RGB color vector
+ * @return An HSV color vector
+ */
 vec3 rgb2hsv( vec3 color )
 {
     float minVal, maxVal, deltaVal,
@@ -38,6 +43,11 @@ vec3 rgb2hsv( vec3 color )
     return vec3( hue, saturation, value );
 }
 
+/**
+ * Convert an HSV color vector to an RGB color vector
+ * @param An HSV color vector
+ * @return An RGB color vector
+ */
 vec3 hsv2rgb( vec3 colorHSV )
 {
     float hh, p, q, t, ff,
@@ -105,9 +115,37 @@ vec3 hsv2rgb( vec3 colorHSV )
     return vec3( red, green, blue );
 }
 
+
+
 vec3 boostSaturation( vec3 color, float saturation_mult )
 {
     vec3 colorHSV = rgb2hsv( color );
     colorHSV.y *= saturation_mult;
     return hsv2rgb( colorHSV );
+}
+
+float crushColorValue( float value, float crushDepth )
+{
+
+    #ifdef exponential_color_levels
+        value = 1.0 - value;
+        value = pow( value, 2.0 );
+        value = 1.0 - value;
+    #endif
+
+    float crushMagnitude = 256.0 / pow( 2.0, crushDepth );
+    float crushed = float( int( int( value * 255 ) / crushMagnitude ) * crushMagnitude );
+    if( crushed > 127.0 )
+        crushed += crushMagnitude - 1.0;
+    crushed /= 255.0;
+    return crushed;
+}
+
+vec3 crush( vec3 color, float crushDepth )
+{
+    float red = crushColorValue( color.x, crushDepth );
+    float green = crushColorValue( color.y, crushDepth );
+    float blue = crushColorValue( color.z, crushDepth );
+
+    return vec3( red, green, blue );
 }

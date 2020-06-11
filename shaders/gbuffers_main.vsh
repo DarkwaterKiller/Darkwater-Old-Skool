@@ -15,14 +15,14 @@ uniform mat4 gbufferModelViewInverse;
 
 void main() {
 	vec3 normal   = gl_NormalMatrix * gl_Normal;
-	vec3 tangent  = gl_NormalMatrix * (at_tangent.xyz / at_tangent.w);
+	vec3 tangent  = gl_NormalMatrix * ( at_tangent.xyz / at_tangent.w );
 	TBN = mat3(tangent, cross(tangent, normal), normal);
-	vNormal = normalize(vec3(vec4(normal, 0.0) * transpose(gbufferModelViewInverse)));
+	vNormal = normalize( vec3( vec4( normal, 0.0 ) * transpose( gbufferModelViewInverse ) ) );
 
 	//gl_Position = ftransform();
 	//color = gl_Color;
 
-	texcoord = mat2(gl_TextureMatrix[0]) * gl_MultiTexCoord0.st + gl_TextureMatrix[0][3].xy;
+	texcoord = mat2( gl_TextureMatrix[0] ) * gl_MultiTexCoord0.st + gl_TextureMatrix[0][3].xy;
 	//texcoord = gl_TextureMatrix[0] * gl_MultiTexCoord0;
 	vec4 position = gl_ModelViewMatrix * gl_Vertex;
 	
@@ -33,7 +33,7 @@ void main() {
 	gl_Position = gl_ProjectionMatrix * position;
 	color = gl_Color;
 	//texcoord = gl_TextureMatrix[0] * gl_MultiTexCoord0;
-	lmcoord = mat2(gl_TextureMatrix[1]) * gl_MultiTexCoord1.st + gl_TextureMatrix[1][3].xy;
+	lmcoord = mat2( gl_TextureMatrix[1] ) * gl_MultiTexCoord1.st + gl_TextureMatrix[1][3].xy;
 	//lmcoord = gl_TextureMatrix[1] * gl_MultiTexCoord1;
 	gl_FogFragCoord = gl_Position.z;
 }
