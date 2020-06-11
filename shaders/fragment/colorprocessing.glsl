@@ -132,15 +132,15 @@ float crushColorValue( float value, float crushDepth )
         value = 1.0 - value;
         value = pow( value, 2.0 );
         value = 1.0 - value;
-    // #elif color_grading_function == 3
-    //     if( value =< 0.5 )
-    //     {
-    //         value = ( 1.0 - pow( 1.0 - 2.0 * value, 2.0 ) ) / 2.0;
-    //     }
-    //     else
-    //     {
-    //         value = ( pow( 2.0 * value - 1.0 ) / 2.0 ) + 0.5;
-    //     }
+    #elif color_grading_function == 3
+        if( value <= 0.5 )
+        {
+            value = ( 1.0 - pow( 1.0 - 2.0 * value, 2.0 ) ) / 2.0;
+        }
+        else
+        {
+            value = ( pow( 2.0 * value - 1.0, 2.0 ) / 2.0 ) + 0.5;
+        }
     #endif
 
     float crushMagnitude = 256.0 / pow( 2.0, crushDepth );
