@@ -10,8 +10,7 @@ uniform float viewWidth, viewHeight;
 #include "fragment/pixel.glsl"
 #include "fragment/colorcrush.glsl"
 
-const vec2 pixelSizes[ 7 ] = vec2[](
-	vec2(1.0),
+const vec2 pixelSizes[ 6 ] = vec2[](
 	vec2(2.0),
 	vec2(4.0),
 	vec2(8.0),
@@ -33,10 +32,24 @@ const float colorDepths[ 8 ] = float[](
 
 void main() {
 	vec2 newTC = texcoord;
-	vec2 psize = pixelSizes[ pixel_size ];
-	float colorDepth = colorDepths[ depth_val ];
-	newTC = pixelize( newTC, psize );
+
+	#ifdef pixelate
+		vec2 psize = pixelSizes[ pixel_size ];
+		newTC = pixelize( newTC, psize );
+	#endif
 	vec3 color = texture2D( gcolor, newTC ).rgb;
-	color = crush( color, float( colorDepth ) );
+
+	#ifndef separate_color_channels
+		float colorDepth = colorDepths[ depth_val ];
+		color = crush( color, float( colorDepth ) );
+	#else
+		float redColorDepth = colorDepths[ red_depth_val ];
+		float greenColorDepth = colorDepths[ green_depth_val ];
+		float blueColorDepth = colorDepths[ blue_depth_val ];
+		color.x = crushColorValue( color.x, float( redColorDepth ) );
+		color.y = crushColorValue( color.y, float( greenColorDepth ) );
+		color.z = crushColorValue( color.z, float( blueColorDepth ) );
+	#endif
+	
 	gl_FragData[ 0 ] = vec4( color, 1.0 );
 }

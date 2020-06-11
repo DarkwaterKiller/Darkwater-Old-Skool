@@ -1,11 +1,14 @@
+screen.pixel_screen=Pixelization Options
+
+option.pixelate=Pixelate
+
 option.pixel_size=Pixel Size
-value.pixel_size.0=1x
-value.pixel_size.1=2x
-value.pixel_size.2=4x
-value.pixel_size.3=8x
-value.pixel_size.4=16x
-value.pixel_size.5=32x
-value.pixel_size.6=64x
+value.pixel_size.0=2x
+value.pixel_size.1=4x
+value.pixel_size.2=8x
+value.pixel_size.3=16x
+value.pixel_size.4=32x
+value.pixel_size.5=64x
 
 option.depth_val=Color Depth
 value.depth_val.0=8-bit
@@ -16,3 +19,37 @@ value.depth_val.4=4-bit
 value.depth_val.5=3-bit
 value.depth_val.6=2-bit
 value.depth_val.7=1-bit
+
+screen.color_screen=Color Depth Options
+
+option.separate_color_channels=Separate Color Depth Channels
+
+option.red_depth_val=Red Color Depth
+value.red_depth_val.0=8-bit
+value.red_depth_val.1=7-bit
+value.red_depth_val.2=6-bit
+value.red_depth_val.3=5-bit
+value.red_depth_val.4=4-bit
+value.red_depth_val.5=3-bit
+value.red_depth_val.6=2-bit
+value.red_depth_val.7=1-bit
+
+option.green_depth_val=Green Color Depth
+value.green_depth_val.0=8-bit
+value.green_depth_val.1=7-bit
+value.green_depth_val.2=6-bit
+value.green_depth_val.3=5-bit
+value.green_depth_val.4=4-bit
+value.green_depth_val.5=3-bit
+value.green_depth_val.6=2-bit
+value.green_depth_val.7=1-bit
+
+option.blue_depth_val=Blue Color Depth
+value.blue_depth_val.0=8-bit
+value.blue_depth_val.1=7-bit
+value.blue_depth_val.2=6-bit
+value.blue_depth_val.3=5-bit
+value.blue_depth_val.4=4-bit
+value.blue_depth_val.5=3-bit
+value.blue_depth_val.6=2-bit
+value.blue_depth_val.7=1-bit

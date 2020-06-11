@@ -1,2 +1,7 @@
-#define pixel_size 3							//[0 1 2 3 4 5 6] Chooses the pixel size for pixelization and color dithering
-#define depth_val 4                             //[0 1 2 3 4 5 6 7] Chooses the color depth
+#define pixelate                    //Enable/Disable pixelation
+#define pixel_size 2				//[0 1 2 3 4 5] Chooses the pixel size for pixelization and color dithering
+#define depth_val 4                 //[0 1 2 3 4 5 6 7] Chooses the color depth
+//#define separate_color_channels   //Disable/Enable separate color depth channels
+#define red_depth_val 4             //[0 1 2 3 4 5 6 7] Chooses the color depth of the red channel
+#define green_depth_val 4           //[0 1 2 3 4 5 6 7] Chooses the color depth of the green channel
+#define blue_depth_val 4            //[0 1 2 3 4 5 6 7] Chooses the color depth of the blue channel
