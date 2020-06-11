@@ -1,0 +1,2 @@
+#define pixel_size 0							//[0 1 2 3 4 5 6 7] Chooses the pixel size for pixelization and color dithering
+#define depth_val 0                             //[0 1 2 3 4 5 6 7] Chooses the color depth
