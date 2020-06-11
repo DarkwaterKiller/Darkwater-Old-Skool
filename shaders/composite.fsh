@@ -9,14 +9,16 @@ uniform float viewWidth, viewHeight;
 
 #include "fragment/pixel.glsl"
 #include "fragment/colorcrush.glsl"
+#include "fragment/colorprocessing.glsl"
 
-const vec2 pixelSizes[ 6 ] = vec2[](
-	vec2(2.0),
-	vec2(4.0),
-	vec2(8.0),
-	vec2(16.0),
-	vec2(32.0),
-	vec2(64.0)
+const vec2 pixelSizes[ 7 ] = vec2[](
+	vec2( 2.0 ),
+	vec2( 4.0 ),
+	vec2( 8.0 ),
+	vec2( 16.0 ),
+	vec2( 32.0 ),
+	vec2( 64.0 ),
+	vec2( 6.0 )
 );
 
 const float colorDepths[ 8 ] = float[](
@@ -38,6 +40,8 @@ void main() {
 		newTC = pixelize( newTC, psize );
 	#endif
 	vec3 color = texture2D( gcolor, newTC ).rgb;
+
+	color = boostSaturation( color, saturation_multiplier );
 
 	#ifdef color_crushing
 		#ifndef separate_color_channels

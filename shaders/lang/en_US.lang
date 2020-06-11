@@ -9,6 +9,7 @@ value.pixel_size.2=8x
 value.pixel_size.3=16x
 value.pixel_size.4=32x
 value.pixel_size.5=64x
+value.pixel_size.6=6x
 
 option.depth_val=Color Depth
 value.depth_val.0=8-bit
@@ -57,3 +58,7 @@ value.blue_depth_val.4=4-bit
 value.blue_depth_val.5=3-bit
 value.blue_depth_val.6=2-bit
 value.blue_depth_val.7=1-bit
+
+option.saturation_multiplier=Saturation Multiplier
+
+screen.water_screen=Water Options
