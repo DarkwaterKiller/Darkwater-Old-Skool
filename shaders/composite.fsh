@@ -39,16 +39,18 @@ void main() {
 	#endif
 	vec3 color = texture2D( gcolor, newTC ).rgb;
 
-	#ifndef separate_color_channels
-		float colorDepth = colorDepths[ depth_val ];
-		color = crush( color, float( colorDepth ) );
-	#else
-		float redColorDepth = colorDepths[ red_depth_val ];
-		float greenColorDepth = colorDepths[ green_depth_val ];
-		float blueColorDepth = colorDepths[ blue_depth_val ];
-		color.x = crushColorValue( color.x, float( redColorDepth ) );
-		color.y = crushColorValue( color.y, float( greenColorDepth ) );
-		color.z = crushColorValue( color.z, float( blueColorDepth ) );
+	#ifdef color_crushing
+		#ifndef separate_color_channels
+			float colorDepth = colorDepths[ depth_val ];
+			color = crush( color, float( colorDepth ) );
+		#else
+			float redColorDepth = colorDepths[ red_depth_val ];
+			float greenColorDepth = colorDepths[ green_depth_val ];
+			float blueColorDepth = colorDepths[ blue_depth_val ];
+			color.x = crushColorValue( color.x, float( redColorDepth ) );
+			color.y = crushColorValue( color.y, float( greenColorDepth ) );
+			color.z = crushColorValue( color.z, float( blueColorDepth ) );
+		#endif
 	#endif
 	
 	gl_FragData[ 0 ] = vec4( color, 1.0 );
