@@ -12,7 +12,6 @@
 //Moving entities IDs
 //See block.properties for mapped ids
 #define entity_water    10008.0     //9
-#define entity_lilypad  10111.0    //
 
 varying vec2 lmcoord;
 varying vec2 texcoord;
@@ -49,7 +48,7 @@ void main() {
     }
 
     #ifdef water_waves
-        if( mc_Entity.x == entity_water || mc_Entity.x == entity_lilypad )
+        if( mc_Entity.x == entity_water )
         {
             float fy = fract( vworldpos.y + 0.001 );
 
