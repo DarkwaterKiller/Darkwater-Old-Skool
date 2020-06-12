@@ -136,12 +136,12 @@ float crushColorValue( float value, float crushDepth )
         float presqr;
         if( value <= 0.5 )
         {
-            presqr = ( 1.0 - 2.0 * value, 2.0 );
+            presqr = ( 1.0 - 2.0 * value );
             value = ( 1.0 - ( presqr * presqr ) ) / 2.0;
         }
         else
         {
-            presqr = ( 2.0 * value - 1.0, 2.0 )
+            presqr = ( 2.0 * value - 1.0 );
             value = ( ( presqr * presqr ) / 2.0 ) + 0.5;
         }
     #endif
