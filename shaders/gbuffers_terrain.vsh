@@ -1,25 +1,16 @@
 #version 120
 
-/**
- * Currently, the majority of what's in this file was written by Sildur.
- * So thank you Sildur, you can find their work here:
- * https://sildurs-shaders.github.io/
- */
-
 #include "settings.glsl"
-
 
 //Moving entities IDs
 //See block.properties for mapped ids
-#define entity_lilypad  10111.0    //
+#define entity_lily_pad 2.0
 
 varying vec2 lmcoord;
 varying vec2 texcoord;
 varying vec4 glcolor;
 
-varying vec3 vworldpos;
-varying float iswater;
-varying float mat;
+varying vec3 worldPositionVector;
 
 attribute vec4 mc_Entity;
 
@@ -32,24 +23,19 @@ uniform float frameTimeCounter;
 const float PI = 3.14159;
 
 void main() {
-	//gl_Position = ftransform();
-
     //Positioning
 	texcoord = ( gl_TextureMatrix[0] * gl_MultiTexCoord0 ).xy;
 	lmcoord  = ( gl_TextureMatrix[1] * gl_MultiTexCoord1 ).xy;
     vec3 position = mat3( gbufferModelViewInverse ) * ( gl_ModelViewMatrix * gl_Vertex ).xyz + gbufferModelViewInverse[3].xyz;
 
-    vworldpos = position.xyz + cameraPosition;
+    worldPositionVector = position.xyz + cameraPosition;
 
     #ifdef water_waves
-        if( mc_Entity.x == entity_lilypad )
+        if( mc_Entity.x == entity_lily_pad )
         {
-            float fy = fract( vworldpos.y + 0.001 );
-
-            float wave = 0.05 * sin( 2 * PI * ( frameTimeCounter * animation_speed + vworldpos.x / 2.5 + vworldpos.z / 5.0 ) )
-                        + 0.05 * sin( 2 * PI * ( frameTimeCounter * animation_speed + vworldpos.x / 6.0 + vworldpos.z / 12.0 ) );
-
-            position.y += clamp( wave, -fy, 1.0 - fy ) * wave_amplitude;
+            float wave = 0.05 * sin( PI * ( frameTimeCounter * animation_speed + worldPositionVector.x / 6.0 + worldPositionVector.z / 10.0 ) )
+                        + 0.05 * sin( 2 * PI * ( frameTimeCounter * animation_speed + worldPositionVector.z / 2.5 ) );
+            position.y += wave * wave_amplitude;
         }
     #endif
 
