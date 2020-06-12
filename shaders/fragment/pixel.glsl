@@ -1,5 +1,9 @@
 
-//Pixelization stuffs, don't ask me how. It just works.
+/**
+ * This pixelization code was written by Maple
+ * You can check out Maple's Retro Extravaganza here:
+ * https://github.com/Lana-chan/maples-retro-extravaganza
+ */
 
 vec2 pixelize( vec2 uv, vec2 pixelSize )
 {

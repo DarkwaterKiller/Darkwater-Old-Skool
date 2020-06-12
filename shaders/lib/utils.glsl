@@ -1,4 +1,9 @@
-
+/**
+ * This utilities code was written by Maple
+ * You can check out Maple's Retro Extravaganza here:
+ * https://github.com/Lana-chan/maples-retro-extravaganza
+ */
+ 
 uniform float near;
 uniform float far;
 

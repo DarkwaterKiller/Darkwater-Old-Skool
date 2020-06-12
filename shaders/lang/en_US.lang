@@ -68,3 +68,9 @@ value.blue_depth_val.7=1-bit
 option.saturation_multiplier=Saturation Multiplier
 
 screen.water_screen=Water Options
+
+option.animation_speed=Animation Speed
+
+option.water_waves=Waving Water
+
+option.wave_amplitude=Wave Heigth Multiplier

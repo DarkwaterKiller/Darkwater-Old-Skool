@@ -127,19 +127,22 @@ vec3 boostSaturation( vec3 color, float saturation_mult )
 float crushColorValue( float value, float crushDepth )
 {
     #if color_grading_function == 1
-        value = pow( value, 2.0 );
+        value *= value;
     #elif color_grading_function == 2
         value = 1.0 - value;
-        value = pow( value, 2.0 );
+        value *= value;
         value = 1.0 - value;
     #elif color_grading_function == 3
+        float presqr;
         if( value <= 0.5 )
         {
-            value = ( 1.0 - pow( 1.0 - 2.0 * value, 2.0 ) ) / 2.0;
+            presqr = ( 1.0 - 2.0 * value, 2.0 );
+            value = ( 1.0 - ( presqr * presqr ) ) / 2.0;
         }
         else
         {
-            value = ( pow( 2.0 * value - 1.0, 2.0 ) / 2.0 ) + 0.5;
+            presqr = ( 2.0 * value - 1.0, 2.0 )
+            value = ( ( presqr * presqr ) / 2.0 ) + 0.5;
         }
     #endif
 
