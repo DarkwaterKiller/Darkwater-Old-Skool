@@ -1,76 +1,77 @@
-screen.pixel_screen=Pixelization Options
+screen.pixel_screen = Pixelization Options
 
-option.pixelate=Pixelate
+option.pixelate = Pixelate
 
-option.pixel_size=Pixel Size
-value.pixel_size.0=2x
-value.pixel_size.1=4x
-value.pixel_size.2=8x
-value.pixel_size.3=16x
-value.pixel_size.4=32x
-value.pixel_size.5=64x
-value.pixel_size.6=6x
+option.pixel_size = Pixel Size
+value.pixel_size.0 = 2x
+value.pixel_size.1 = 4x
+value.pixel_size.2 = 8x
+value.pixel_size.3 = 16x
+value.pixel_size.4 = 32x
+value.pixel_size.5 = 64x
+value.pixel_size.6 = 6x
 
-option.depth_val=Color Depth
-value.depth_val.0=8-bit
-value.depth_val.1=7-bit
-value.depth_val.2=6-bit
-value.depth_val.3=5-bit
-value.depth_val.4=4-bit
-value.depth_val.5=3-bit
-value.depth_val.6=2-bit
-value.depth_val.7=1-bit
+option.depth_val = Color Depth
+value.depth_val.0 = 8-bit
+value.depth_val.1 = 7-bit
+value.depth_val.2 = 6-bit
+value.depth_val.3 = 5-bit
+value.depth_val.4 = 4-bit
+value.depth_val.5 = 3-bit
+value.depth_val.6 = 2-bit
+value.depth_val.7 = 1-bit
 
-screen.color_screen=Color Options
+screen.color_screen = Color Options
 
-option.color_crushing=Color Crushing
+option.color_crushing = Color Crushing
 
-option.exponential_color_levels=Exponential Color Levels
+option.exponential_color_levels = Exponential Color Levels
 
-option.color_grading_function=Color Grading Function
-value.color_grading_function.0=Linear
-value.color_grading_function.1=Exponential
-value.color_grading_function.2=Inverted Exponential
-value.color_grading_function.3=Piecewise
+option.color_grading_function = Color Grading Function
+value.color_grading_function.0 = Linear
+value.color_grading_function.1 = Exponential
+value.color_grading_function.2 = Inverted Exponential
+value.color_grading_function.3 = Piecewise
 
-option.separate_color_channels=Separate Color Depth Channels
+option.separate_color_channels = Separate Color Depth Channels
 
-option.red_depth_val=Red Color Depth
-value.red_depth_val.0=8-bit
-value.red_depth_val.1=7-bit
-value.red_depth_val.2=6-bit
-value.red_depth_val.3=5-bit
-value.red_depth_val.4=4-bit
-value.red_depth_val.5=3-bit
-value.red_depth_val.6=2-bit
-value.red_depth_val.7=1-bit
+option.red_depth_val = Red Color Depth
+value.red_depth_val.0 = 8-bit
+value.red_depth_val.1 = 7-bit
+value.red_depth_val.2 = 6-bit
+value.red_depth_val.3 = 5-bit
+value.red_depth_val.4 = 4-bit
+value.red_depth_val.5 = 3-bit
+value.red_depth_val.6 = 2-bit
+value.red_depth_val.7 = 1-bit
 
-option.green_depth_val=Green Color Depth
-value.green_depth_val.0=8-bit
-value.green_depth_val.1=7-bit
-value.green_depth_val.2=6-bit
-value.green_depth_val.3=5-bit
-value.green_depth_val.4=4-bit
-value.green_depth_val.5=3-bit
-value.green_depth_val.6=2-bit
-value.green_depth_val.7=1-bit
+option.green_depth_val = Green Color Depth
+value.green_depth_val.0 = 8-bit
+value.green_depth_val.1 = 7-bit
+value.green_depth_val.2 = 6-bit
+value.green_depth_val.3 = 5-bit
+value.green_depth_val.4 = 4-bit
+value.green_depth_val.5 = 3-bit
+value.green_depth_val.6 = 2-bit
+value.green_depth_val.7 = 1-bit
 
-option.blue_depth_val=Blue Color Depth
-value.blue_depth_val.0=8-bit
-value.blue_depth_val.1=7-bit
-value.blue_depth_val.2=6-bit
-value.blue_depth_val.3=5-bit
-value.blue_depth_val.4=4-bit
-value.blue_depth_val.5=3-bit
-value.blue_depth_val.6=2-bit
-value.blue_depth_val.7=1-bit
+option.blue_depth_val = Blue Color Depth
+value.blue_depth_val.0 = 8-bit
+value.blue_depth_val.1 = 7-bit
+value.blue_depth_val.2 = 6-bit
+value.blue_depth_val.3 = 5-bit
+value.blue_depth_val.4 = 4-bit
+value.blue_depth_val.5 = 3-bit
+value.blue_depth_val.6 = 2-bit
+value.blue_depth_val.7 = 1-bit
 
-option.saturation_multiplier=Saturation Multiplier
+option.saturation_multiplier = Saturation Multiplier
 
-screen.water_screen=Water Options
+screen.water_screen = Water Options
 
-option.animation_speed=Animation Speed
+option.animation_speed = Animation Speed
 
-option.water_waves=Waving Water
+option.water_waves = Waving Water
 
-option.wave_amplitude=Wave Heigth Multiplier
+option.wave_amplitude = Wave Heigth Multiplier
+

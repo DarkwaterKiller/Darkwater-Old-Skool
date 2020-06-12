@@ -17,7 +17,8 @@ uniform int isEyeInWater;
 
 #include "lib/utils.glsl"
 
-void main() {
+void main()
+{
 	vec4 normalTex = texture2D( normals, texcoord ) * 2.0 - 1.0;
 	vec4 albedo;
 	

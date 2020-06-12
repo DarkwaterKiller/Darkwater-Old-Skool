@@ -22,7 +22,8 @@ uniform mat4 gbufferModelViewInverse;
 uniform float frameTimeCounter;
 const float PI = 3.14159;
 
-void main() {
+void main()
+{
     //Positioning
 	texcoord = ( gl_TextureMatrix[0] * gl_MultiTexCoord0 ).xy;
 	lmcoord  = ( gl_TextureMatrix[1] * gl_MultiTexCoord1 ).xy;

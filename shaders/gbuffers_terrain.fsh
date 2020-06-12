@@ -1,5 +1,7 @@
 #version 120
 
+#include "fragment/colorprocessing.glsl"
+
 uniform sampler2D lightmap;
 uniform sampler2D texture;
 
@@ -7,7 +9,8 @@ varying vec2 lmcoord;
 varying vec2 texcoord;
 varying vec4 glcolor;
 
-void main() {
+void main()
+{
 	vec4 color = texture2D(texture, texcoord) * glcolor;
 	color *= texture2D(lightmap, lmcoord);
 

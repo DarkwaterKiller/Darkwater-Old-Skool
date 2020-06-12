@@ -12,4 +12,3 @@
 #define animation_speed 0.5         //[0.25 0.5 0.75 1.0 1.25 1.5 1.75 2.0] Set the animation speed for things like waves
 //#define water_waves               //Enable/Disable waves in water
 #define wave_amplitude 0.6          //[0.2 0.4 0.6 0.8 1.0] The max height of the water waves
-//#define shadows                   //Enable/Disable simple shadows

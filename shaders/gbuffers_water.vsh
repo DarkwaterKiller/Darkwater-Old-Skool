@@ -22,12 +22,11 @@ uniform mat4 gbufferModelViewInverse;
 uniform float frameTimeCounter;
 const float PI = 3.14159;
 
-void main() {
-    //Positioning
+void main()
+{
 	texcoord = ( gl_TextureMatrix[0] * gl_MultiTexCoord0 ).xy;
 	lmcoord  = ( gl_TextureMatrix[1] * gl_MultiTexCoord1 ).xy;
     vec3 position = mat3( gbufferModelViewInverse ) * ( gl_ModelViewMatrix * gl_Vertex ).xyz + gbufferModelViewInverse[3].xyz;
-
     worldPositionVector = position.xyz + cameraPosition;
 
     #ifdef water_waves

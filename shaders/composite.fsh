@@ -6,6 +6,7 @@ uniform sampler2D gcolor;
 
 varying vec2 texcoord;
 uniform float viewWidth, viewHeight;
+uniform int worldTime;
 
 #include "fragment/pixel.glsl"
 #include "fragment/colorprocessing.glsl"

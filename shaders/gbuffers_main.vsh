@@ -13,10 +13,11 @@ uniform mat4 gbufferModelViewInverse;
 // but the main goal with this whole file is to only pass everything no different than default rendering
 // except for the addition of normal map to final
 
-void main() {
+void main()
+{
 	vec3 normal   = gl_NormalMatrix * gl_Normal;
 	vec3 tangent  = gl_NormalMatrix * ( at_tangent.xyz / at_tangent.w );
-	TBN = mat3(tangent, cross(tangent, normal), normal);
+	TBN = mat3( tangent, cross( tangent, normal ), normal );
 	vNormal = normalize( vec3( vec4( normal, 0.0 ) * transpose( gbufferModelViewInverse ) ) );
 
 	//gl_Position = ftransform();
