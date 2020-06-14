@@ -8,6 +8,8 @@ varying vec2 texcoord;
 uniform float viewWidth, viewHeight;
 uniform int worldTime;
 
+uniform sampler2D shadowtex0;
+
 #include "fragment/pixel.glsl"
 #include "fragment/colorprocessing.glsl"
 
@@ -56,6 +58,10 @@ void main() {
 			color.z = crushColorValue( color.z, float( blueColorDepth ) );
 		#endif
 	#endif
-	
+
+	#ifdef shadowtex0_overlay
+		color = ( texture2D( shadowtex0, texcoord ) ).rgb;
+	#endif
+
 	gl_FragData[0] = vec4( color, 1.0 );
 }

@@ -75,3 +75,6 @@ option.water_waves = Waving Water
 
 option.wave_amplitude = Wave Heigth Multiplier
 
+screen.shadow_screen = Shadow Options
+
+option.shadowtex0_overlay = ST0 Overlay
