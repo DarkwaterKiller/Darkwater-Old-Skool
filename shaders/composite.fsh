@@ -6,7 +6,6 @@ uniform sampler2D gcolor;
 
 varying vec2 texcoord;
 uniform float viewWidth, viewHeight;
-uniform int worldTime;
 
 uniform sampler2D shadowtex0;
 

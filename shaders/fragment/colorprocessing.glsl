@@ -1,5 +1,8 @@
 #include "../settings.glsl"
 
+uniform int worldTime;
+const float PI = 3.141596;
+
 /**
  * Convert an RGB color vetor to an HSV color vector
  * @param An RGB color vector
@@ -144,6 +147,14 @@ float crushColorValue( float value, float crushDepth )
             presqr = ( 2.0 * value - 1.0 );
             value = ( ( presqr * presqr ) / 2.0 ) + 0.5;
         }
+    #elif color_grading_function == 4
+        float invExpVal = 1.0 - ( ( 1.0 - value ) * ( 1.0 - value ) );
+        float invExpFactor = 0.0;
+
+        if( worldTime >= 13000 && worldTime <= 23000 )
+            invExpFactor = abs( sin( float( PI * ( worldTime - 3000 ) ) / 10000 ) );
+
+        value = ( value * ( 1.0 - invExpFactor ) ) + ( invExpVal * invExpFactor );
     #endif
 
     float crushMagnitude = 256.0 / pow( 2.0, crushDepth );

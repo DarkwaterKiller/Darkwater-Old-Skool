@@ -32,6 +32,7 @@ value.color_grading_function.0 = Linear
 value.color_grading_function.1 = Exponential
 value.color_grading_function.2 = Inverted Exponential
 value.color_grading_function.3 = Piecewise
+value.color_grading_function.4 = Dynamic
 
 option.separate_color_channels = Separate Color Depth Channels
 

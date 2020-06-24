@@ -1,7 +1,5 @@
 #version 120
 
-#include "fragment/colorprocessing.glsl"
-
 uniform sampler2D lightmap;
 uniform sampler2D texture;
 
