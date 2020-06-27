@@ -9,9 +9,10 @@ varying vec4 glcolor;
 
 void main()
 {
-	vec4 color = texture2D(texture, texcoord) * glcolor;
-	color *= texture2D(lightmap, lmcoord);
+	vec4 color = texture2D( texture, texcoord ) * glcolor;
+	vec4 lightColor = texture2D( lightmap, lmcoord );
+	color *= lightColor;
 
-/* DRAWBUFFERS:0 */
+	/* DRAWBUFFERS:0 */
 	gl_FragData[0] = color; //gcolor
 }

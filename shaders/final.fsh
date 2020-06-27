@@ -4,6 +4,8 @@ varying vec2 texcoord;
 uniform sampler2D colortex0;
 uniform float viewWidth, viewHeight;
 
+uniform sampler2D depthtex0;
+
 #include "lib/utils.glsl"
 
 void main() {
