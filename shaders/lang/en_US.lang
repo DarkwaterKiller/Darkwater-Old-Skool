@@ -29,10 +29,7 @@ option.exponential_color_levels = Exponential Color Levels
 
 option.color_grading_function = Color Grading Function
 value.color_grading_function.0 = Linear
-value.color_grading_function.1 = Exponential
-value.color_grading_function.2 = Inverted Exponential
-value.color_grading_function.3 = Piecewise
-value.color_grading_function.4 = Dynamic
+value.color_grading_function.1 = Square Root
 
 option.separate_color_channels = Separate Color Depth Channels
 

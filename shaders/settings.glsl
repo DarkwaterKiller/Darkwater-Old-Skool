@@ -8,7 +8,7 @@
 #define blue_depth_val 4            //[0 1 2 3 4 5 6 7] Chooses the color depth of the blue channel
 #define exponential_color_levels    //Enable/Disable color intensities being set on an exponential scale
 #define saturation_multiplier 1.0   //[0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0] Multiplier for color saturation
-#define color_grading_function 2    //[0 1 2 3 4] Exponential: (Dark -> Mid: Slow, Light -> Mid: Fast). Inverted Exponential: (Dark -> Mid: Fast, Light -> Mid: Slow). Piecewise: (Dark -> Mid: Fast, Light -> Mid: Fast). Dynamic: Color curve changes throughout the day. Dynamic is experimental and may look weird when working underground!
+#define color_grading_function 0    //[0 1] Linear: Linear color curve. Square Root: Sqrt color curve (Boosts darker colors greatly, but light ones also appear a bit brigher).
 #define animation_speed 1.0         //[0.25 0.5 0.75 1.0 1.25 1.5 1.75 2.0] Set the animation speed for things like waves
 #define water_waves               //Enable/Disable waves in water
 #define wave_amplitude 0.6          //[0.2 0.4 0.6 0.8 1.0] The max height of the water waves

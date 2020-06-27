@@ -130,31 +130,7 @@ vec3 boostSaturation( vec3 color, float saturation_mult )
 float crushColorValue( float value, float crushDepth )
 {
     #if color_grading_function == 1
-        value *= value;
-    #elif color_grading_function == 2
-        value = 1.0 - value;
-        value *= value;
-        value = 1.0 - value;
-    #elif color_grading_function == 3
-        float presqr;
-        if( value <= 0.5 )
-        {
-            presqr = ( 1.0 - 2.0 * value );
-            value = ( 1.0 - ( presqr * presqr ) ) / 2.0;
-        }
-        else
-        {
-            presqr = ( 2.0 * value - 1.0 );
-            value = ( ( presqr * presqr ) / 2.0 ) + 0.5;
-        }
-    #elif color_grading_function == 4
-        float invExpVal = 1.0 - ( ( 1.0 - value ) * ( 1.0 - value ) );
-        float invExpFactor = 0.0;
-
-        if( worldTime >= 13000 && worldTime <= 23000 )
-            invExpFactor = abs( sin( float( PI * ( worldTime - 3000 ) ) / 10000 ) );
-
-        value = ( value * ( 1.0 - invExpFactor ) ) + ( invExpVal * invExpFactor );
+        value = sqrt( value );
     #endif
 
     float crushMagnitude = 256.0 / pow( 2.0, crushDepth );

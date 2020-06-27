@@ -32,8 +32,8 @@ void main()
     #ifdef water_waves
         if( mc_Entity.x == entity_water )
         {
-            float wave = 0.05 * sin( 0.5 * PI * ( frameTimeCounter * animation_speed + worldPositionVector.x / 6.0 + worldPositionVector.z / 10.0 ) )
-                        + 0.05 * sin( 0.75 * PI * ( frameTimeCounter * animation_speed + worldPositionVector.z / 2.5 ) );
+            float wave = 0.05 * sin(2 * PI * (frameTimeCounter*0.8 + worldPositionVector.x /  2.5 + worldPositionVector.z / 5.0))
+				   + 0.05 * sin(2 * PI * (frameTimeCounter*0.6 + worldPositionVector.x / 6.0 + worldPositionVector.z /  12.0));
             position.y += wave * wave_amplitude;
         }
     #endif
