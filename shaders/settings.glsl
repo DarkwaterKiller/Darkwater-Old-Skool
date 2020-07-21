@@ -14,3 +14,5 @@
 #define wave_amplitude 0.6          //[0.2 0.4 0.6 0.8 1.0] The max height of the water waves
 
 //#define shadowtex0_overlay        //Enable/Disable shadowtex0 Overlay. DEBUGGING ONLY!
+#define shadow_bias 0.00025         //[0.00025 0.0003 0.00035 0.0004 0.00045 0.0025]
+#define shadows
