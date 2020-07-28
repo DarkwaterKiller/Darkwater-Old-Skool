@@ -58,9 +58,5 @@ void main() {
 		#endif
 	#endif
 
-	#ifdef shadowtex0_overlay
-		color = ( texture2D( shadowtex0, texcoord ) ).rgb;
-	#endif
-
 	gl_FragData[0] = vec4( color, 1.0 );
 }
